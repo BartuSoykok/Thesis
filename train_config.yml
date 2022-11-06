@@ -1,0 +1,12 @@
+paths:
+  eval_image_dir: "data/training/eval"
+  train_image_dir: "data/training/train"
+  results_dir: "data/custom_training"
+  csv_results_dir: "data/csv_results"
+
+image:
+  height: 224 #224, 299
+  width: 224 #224, 299
+  channels: 3
+
+

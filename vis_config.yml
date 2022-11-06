@@ -1,0 +1,12 @@
+image:
+  height: 224 #224, 299
+  width: 224 #224, 299
+  channels: 3
+
+paths:
+  image_dir: "data/images"
+  results_dir: "data/results"
+  csv_results_dir: "data/csv_results"
+
+display:
+  colormap: "seismic"

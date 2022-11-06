@@ -1,0 +1,81 @@
+paths:
+  image_dir: "data/training/eval"
+  results_dir: "data/results"
+  csv_results_dir: "data/csv_results"
+
+image:
+  height: 224 #224, 299
+  width: 224 #224, 299
+  channels: 3
+
+display:
+  colormap: "RdBu"
+
+models:
+  #- name: "mobilenet"
+  #  weights: "imagenet"
+
+  #- name: "vgg19"
+  #  weights: "imagenet"
+
+  #- name: "resnet50"
+  #  weights: "imagenet"
+
+  #- name: "custom"
+  #  weights: "data/custom_training/custom_model_01"
+
+  #- name: "custom"
+  #  weights: "data/custom_training/custom_model_04"
+    
+  #- name: "custom"
+  #  weights: "data/custom_training/custom_model_08"
+
+  #- name: "custom"
+  #  weights: "data/custom_training_resnet50/custom_model_resnet50_02"
+
+  - name: "custom"
+    weights: "data/custom_training_resnet50/custom_model_resnet50_08"
+    
+  - name: "custom"
+    weights: "data/custom_training_resnet50/custom_model_resnet50_10"
+
+
+attribution_methods:
+    
+  #- name: "RandomAttribution"
+  
+  - name: "GradientBased"
+  #  modes: [RANDOM_BASELINE_INTEGRATED_GRAD] #, GRAD_ONLY, INTEGRATED_GRAD] #, RANDOM_BASELINE_INTEGRATED_GRAD]
+  
+  #- name: "LIME"
+  
+  #- name: "LRP"
+  #  modes: [Z_RULE]
+  
+  
+
+
+
+evaluation_methods:
+
+  - evaluation_method: SensitivityN
+    params: {"sen_N": 50, "sen_r": 300}
+
+  - evaluation_method: IROF
+    params: {"sen_N": 50}
+
+  - evaluation_method: IROF_Blur
+    params: {"sen_N": 50}
+  
+  - evaluation_method: "RemoveBestPixel"
+    params: {"sen_N": 50}
+
+  - evaluation_method: "RemoveBestSuperpixel"
+    params: {"sen_N": 50}
+   
+  - evaluation_method: "BlurBestPixel"
+    params: {"sen_N": 50}
+
+  - evaluation_method: "BlurBestSuperpixel"
+    params: {"sen_N": 50}
+   

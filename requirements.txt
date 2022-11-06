@@ -1,0 +1,14 @@
+tensorflow  # ==2.3.0
+tensorflow_datasets
+keras
+Pillow
+matplotlib
+opencv-python
+numpy<1.23.0
+pandas
+pyyaml
+pytest
+lime
+deeplift
+fiftyone
+pycocotools

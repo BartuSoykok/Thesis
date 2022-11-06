@@ -1,0 +1,53 @@
+paths:
+  image_dir: "data/images"
+  results_dir: "data/results"
+  csv_results_dir: "data/csv_results"
+
+image:
+  height: 224 #224, 299
+  width: 224 #224, 299
+  channels: 3
+
+display:
+  colormap: "RdBu"
+
+
+models:
+  - name: "vgg19"
+    weights: "imagenet"
+
+  - name: "resnet50"
+    weights: "imagenet"
+
+  #- name: "custom"
+  #  weights: "data/custom_training_vgg16/custom_model_vgg16_02"
+
+  #- name: "custom"
+  #  weights: "data/custom_training_vgg16/custom_model_vgg16_04"
+    
+  #- name: "custom"
+  #  weights: "data/custom_training_vgg16/custom_model_vgg16_06"
+
+  #- name: "custom"
+  #  weights: "data/custom_training_resnet50/custom_model_resnet50_02"
+
+  #- name: "custom"
+  #  weights: "data/custom_training_resnet50/custom_model_resnet50_04"
+    
+  #- name: "custom"
+  #  weights: "data/custom_training_resnet50/custom_model_resnet50_06"
+
+
+
+attribution_methods:
+  #- name: "RandomAttribution"
+  
+  - name: "GradientBased"
+    modes: [RANDOM_BASELINE_INTEGRATED_GRAD] #, GRAD_ONLY, INTEGRATED_GRAD] #, RANDOM_BASELINE_INTEGRATED_GRAD]
+    
+  #- name: "LIME"
+  
+  #- name: "LRP"
+  #  modes: [OMEGA_RULE]
+    
+  
